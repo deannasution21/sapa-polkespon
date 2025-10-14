@@ -1,13 +1,41 @@
 <!DOCTYPE html>
 <html class="no-js" lang="en">
 
-<meta charset="utf-8">
-<meta http-equiv="x-ua-compatible" content="ie=edge">
-<title>@yield('title')</title>
-<meta name="keywords" content="online education, e-learning, coaching, education, teaching, learning">
+<!-- Charset and viewport -->
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Primary Meta Tags -->
+<title>@yield('title', 'SAPA POLKESPON - sapapolkespon.poltekkes-pontianak.ac.id')</title>
+<meta name="title" content="SAPA POLKESPON - sapapolkespon.poltekkes-pontianak.ac.id">
 <meta name="description"
-    content="Zoomy is a e-learnibg HTML template for all kinds of education, coaching, online education website">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+    content="Portal layanan terpadu Poltekkes Pontianak untuk mengurus kebutuhan akademik dan non-akademik secara online, mudah, cepat, dan efisien.">
+
+<!-- Canonical URL -->
+<link rel="canonical" href="https://sapapolkespon.poltekkes-pontianak.ac.id/" />
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://sapapolkespon.poltekkes-pontianak.ac.id/">
+<meta property="og:title" content="SAPA POLKESPON - sapapolkespon.poltekkes-pontianak.ac.id">
+<meta property="og:description"
+    content="Portal layanan terpadu Poltekkes Pontianak untuk mengurus kebutuhan akademik dan non-akademik secara online, mudah, cepat, dan efisien.">
+<meta property="og:image" content="https://sapapolkespon.poltekkes-pontianak.ac.id/assets/img/logo/logo-ipg2.jpeg">
+<!-- Change from favicon -->
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:url" content="https://sapapolkespon.poltekkes-pontianak.ac.id/">
+<meta name="twitter:title" content="SAPA POLKESPON - sapapolkespon.poltekkes-pontianak.ac.id">
+<meta name="twitter:description"
+    content="Portal layanan terpadu Poltekkes Pontianak untuk mengurus kebutuhan akademik dan non-akademik secara online, mudah, cepat, dan efisien.">
+<meta name="twitter:image" content="https://sapapolkespon.poltekkes-pontianak.ac.id/assets/img/logo/logo-ipg2.jpeg">
+<!-- Change from favicon -->
+
+<!-- Favicon & Icons -->
+<link rel="icon" type="image/png"
+    href="https://sapapolkespon.poltekkes-pontianak.ac.id/assets/img/logo/logo-ipg2.jpeg">
 
 @include('partials.icon')
 @include('partials/css')

@@ -9,11 +9,21 @@ class DashboardController extends Controller
     //
     public function index(Request $request)
     {
-        if (view()->exists($request->path())) {
-            return view($request->path());
-        } else {
-            abort(404);
+        $path = $request->path(); // e.g. "layanan/klinik/gizi"
+
+        // Handle dynamic Klinik pages
+        if (str_starts_with($path, 'layanan/klinik/')) {
+            $segments = explode('/', $path);
+            $page = $segments[2] ?? null; // e.g. "gizi", "umum", etc.
+
+            return view('layanan.klinik.index', compact('page'));
         }
+
+        // Handle normal static blade views
+        if (view()->exists($path)) {
+            return view($path);
+        }
+
+        abort(404);
     }
 }
-

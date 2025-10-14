@@ -103,6 +103,10 @@
                                         class="nav-item dropdown mega-menu
         {{ request()->is('layanan/sarpras') ||
         request()->is('layanan/klinik') ||
+        request()->is('layanan/klinik/umum') ||
+        request()->is('layanan/klinik/kia-kb') ||
+        request()->is('layanan/klinik/gigi') ||
+        request()->is('layanan/klinik/gizi') ||
         request()->is('layanan/asrama') ||
         request()->is('layanan/catering')
             ? 'active'
