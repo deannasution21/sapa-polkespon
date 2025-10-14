@@ -167,6 +167,11 @@
                                 <li><a class="sign-in ml-20" href="{{ url('/masuk') }}"><img
                                             src="{{ URL::asset('assets/img/icon/user.svg') }}" alt=""></a>
                                 </li>
+                                <li><a class="sign-in ml-20 d-flex justify-content-center align-items-center"
+                                        href="{{ url('/masuk') }}">
+                                        <i class="fas fa-shopping-cart text-primary fs-5"></i>
+                                    </a>
+                                </li>
                             </ul>
                         </div>
                         <div class="hamburger-menu d-md-inline-block d-lg-none text-right">
