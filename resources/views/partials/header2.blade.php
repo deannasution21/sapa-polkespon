@@ -12,71 +12,143 @@
                         <div class="nav-container">
                             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                                 <ul class="navbar-nav">
-                                    <li class="nav-item active">
-                                        <a class="nav-link" href="contact" id="" role="button"
-                                            aria-expanded="false">Beranda</a>
+                                    {{-- === BERANDA === --}}
+                                    <li class="nav-item {{ request()->is('/') ? 'active' : '' }}">
+                                        <a class="nav-link" href="{{ url('/') }}">Beranda</a>
                                     </li>
-                                    <li class="nav-item dropdown mega-menu">
+
+                                    {{-- === AKADEMIK === --}}
+                                    <li
+                                        class="nav-item dropdown mega-menu
+        {{ request()->is('layanan/permohonan-dokumen-akademik') ||
+        request()->is('layanan/legalisir') ||
+        request()->is('layanan/surat-keterangan') ||
+        request()->is('layanan/translate') ||
+        request()->is('layanan/toefl-itp') ||
+        request()->is('layanan/perpustakaan') ||
+        request()->is('layanan/ethical-clearance') ||
+        request()->is('layanan/pengujian') ||
+        request()->is('layanan/pengembangan-kompetensi')
+            ? 'active'
+            : '' }}">
+
                                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2"
                                             role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                             Akademik
                                         </a>
+
                                         <ul class="dropdown-menu submenu mega-menu__sub-menu-box"
-                                            aria-labelledby="navbarDropdown">
-                                            <li><a href="{{ url('/layanan/permohonan-dokumen-akademik   ') }}"><span><img
-                                                            src="{{ URL::asset('assets/img/icon/icon7.svg') }}"
-                                                            alt=""></span> (Permohonan Dokumen
-                                                    Akademik)</a></li>
-                                            <li><a href="#"><span><img
-                                                            src="{{ URL::asset('assets/img/icon/icon8.svg') }}"
-                                                            alt=""></span> Ethical Clearance</a></li>
-                                            <li><a href="{{ url('/layanan/translate') }}"><span><img
-                                                            src="{{ URL::asset('assets/img/icon/icon9.svg') }}"
-                                                            alt=""></span> Translate Abstract/Dokumen</a></li>
-                                            <li><a href="#"><span><img
-                                                            src="{{ URL::asset('assets/img/icon/icon10.svg') }}"
-                                                            alt=""></span> Layanan TOEFL ITP</a></li>
-                                            <li><a href="#"><span><img
-                                                            src="{{ URL::asset('assets/img/icon/icon11.svg') }}"
-                                                            alt=""></span> Layanan Pengujian</a></li>
-                                            <li><a href="#"><span><img
-                                                            src="{{ URL::asset('assets/img/icon/icon12.svg') }}"
-                                                            alt=""></span> Layanan Jurnal dan Publikasi</a></li>
-                                            <li><a href="{{ url('/layanan/perpustakaan') }}"><span><img
-                                                            src="{{ URL::asset('assets/img/icon/icon14.svg') }}"
-                                                            alt=""></span> Layanan Perpustakaan</a></li>
-                                            <li><a href="#"><span><img
-                                                            src="{{ URL::asset('assets/img/icon/icon13.svg') }}"
-                                                            alt=""></span> Layanan Pengembangan Kompetensi</a>
+                                            aria-labelledby="navbarDropdown2">
+                                            <li>
+                                                <a href="{{ url('/layanan/permohonan-dokumen-akademik') }}">
+                                                    <span><img src="{{ URL::asset('assets/img/icon/icon7.svg') }}"
+                                                            alt=""></span>
+                                                    Permohonan Dokumen Akademik
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a onclick="layananMaintenance()" style="cursor:pointer">
+                                                    <span><img src="{{ URL::asset('assets/img/icon/icon8.svg') }}"
+                                                            alt=""></span>
+                                                    Ethical Clearance
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="{{ url('/layanan/translate') }}">
+                                                    <span><img src="{{ URL::asset('assets/img/icon/icon9.svg') }}"
+                                                            alt=""></span>
+                                                    Translate Abstract/Dokumen
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="{{ url('/layanan/toefl-itp') }}">
+                                                    <span><img src="{{ URL::asset('assets/img/icon/icon10.svg') }}"
+                                                            alt=""></span>
+                                                    Layanan TOEFL ITP
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a onclick="layananMaintenance()" style="cursor:pointer">
+                                                    <span><img src="{{ URL::asset('assets/img/icon/icon11.svg') }}"
+                                                            alt=""></span>
+                                                    Layanan Pengujian
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="https://kemkes.go.id/id/home" target="_blank">
+                                                    <span><img src="{{ URL::asset('assets/img/icon/icon12.svg') }}"
+                                                            alt=""></span>
+                                                    Layanan Jurnal dan Publikasi
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="{{ url('/layanan/perpustakaan') }}">
+                                                    <span><img src="{{ URL::asset('assets/img/icon/icon14.svg') }}"
+                                                            alt=""></span>
+                                                    Layanan Perpustakaan
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a onclick="layananMaintenance()" style="cursor:pointer">
+                                                    <span><img src="{{ URL::asset('assets/img/icon/icon13.svg') }}"
+                                                            alt=""></span>
+                                                    Layanan Pengembangan Kompetensi
+                                                </a>
                                             </li>
                                         </ul>
                                     </li>
-                                    <li class="nav-item dropdown mega-menu">
+
+                                    {{-- === NON AKADEMIK === --}}
+                                    <li
+                                        class="nav-item dropdown mega-menu
+        {{ request()->is('layanan/sarpras') ||
+        request()->is('layanan/klinik') ||
+        request()->is('layanan/asrama') ||
+        request()->is('layanan/catering')
+            ? 'active'
+            : '' }}">
+
                                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown3"
-                                            role="button" data-bs-toggle="dropdown" aria-expanded="false">Non
-                                            Akademik</a>
+                                            role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                            Non Akademik
+                                        </a>
+
                                         <ul class="dropdown-menu submenu mega-menu__sub-menu-box"
-                                            aria-labelledby="navbarDropdown">
-                                            <li><a href="#"><span><img
-                                                            src="{{ URL::asset('assets/img/icon/icon7.svg') }}"
-                                                            alt=""></span> Layanan Penyewaan Sarpras</a></li>
-                                            <li><a href="#"><span><img
-                                                            src="{{ URL::asset('assets/img/icon/icon8.svg') }}"
-                                                            alt=""></span> Layanan Klinik Pratama</a></li>
-                                            <li><a href="#"><span><img
-                                                            src="{{ URL::asset('assets/img/icon/icon9.svg') }}"
-                                                            alt=""></span> Layanan Asrama (khusus
-                                                    mahasiswa)</a></li>
-                                            <li><a href="#"><span><img
-                                                            src="{{ URL::asset('assets/img/icon/icon10.svg') }}"
-                                                            alt=""></span> Layanan Catering
-                                                    (khusus
-                                                    mahasiswa)</a></li>
+                                            aria-labelledby="navbarDropdown3">
+                                            <li>
+                                                <a href="{{ url('/layanan/sarpras') }}">
+                                                    <span><img src="{{ URL::asset('assets/img/icon/icon7.svg') }}"
+                                                            alt=""></span>
+                                                    Layanan Penyewaan Sarpras
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="{{ url('/layanan/klinik') }}">
+                                                    <span><img src="{{ URL::asset('assets/img/icon/icon8.svg') }}"
+                                                            alt=""></span>
+                                                    Layanan Klinik Pratama
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="{{ url('/layanan/asrama') }}">
+                                                    <span><img src="{{ URL::asset('assets/img/icon/icon9.svg') }}"
+                                                            alt=""></span>
+                                                    Layanan Asrama (khusus mahasiswa)
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="{{ url('/layanan/catering') }}">
+                                                    <span><img src="{{ URL::asset('assets/img/icon/icon10.svg') }}"
+                                                            alt=""></span>
+                                                    Layanan Catering (khusus mahasiswa)
+                                                </a>
+                                            </li>
                                         </ul>
                                     </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="contact" id="navbarDropdown5" role="button"
-                                            aria-expanded="false">Kontak</a>
+
+                                    {{-- === KONTAK === --}}
+                                    <li class="nav-item {{ request()->is('kontak') ? 'active' : '' }}">
+                                        <a class="nav-link" href="{{ url('/kontak') }}">Kontak</a>
                                     </li>
                                 </ul>
                             </div>
@@ -87,8 +159,8 @@
                     <div class="right-nav d-flex align-items-center justify-content-end">
                         <div class="right-btn mr-25 mr-xs-15">
                             <ul class="d-flex align-items-center">
-                                <li><a href="daftar" class="theme_btn free_btn">Daftar SAPA</a></li>
-                                <li><a class="sign-in ml-20" href="masuk"><img
+                                <li><a href="{{ url('/daftar') }}" class="theme_btn free_btn">Daftar SAPA</a></li>
+                                <li><a class="sign-in ml-20" href="{{ url('/masuk') }}"><img
                                             src="{{ URL::asset('assets/img/icon/user.svg') }}" alt=""></a>
                                 </li>
                             </ul>

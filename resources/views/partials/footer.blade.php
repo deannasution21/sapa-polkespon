@@ -14,9 +14,7 @@
                           platform digital.</p>
                       <div class="social-media footer__social mt-30">
                           <a href="#"><i class="fab fa-facebook-f"></i></a>
-                          <a href="#"><i class="fab fa-twitter"></i></a>
-                          <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                          <a href="#"><i class="fab fa-google-plus-g"></i></a>
+                          <a href="#"><i class="fab fa-instagram"></i></a>
                       </div>
                   </div>
               </div>
@@ -34,12 +32,12 @@
                   <div class="footer__widget mb-25 pl-90 pl-md-0 pl-xs-0">
                       <h6 class="widget-title mb-35">Menu Utama</h6>
                       <ul class="fot-list">
-                          <li><a href="about">Beranda</a></li>
-                          <li><a href="#">Layanan Akademik</a></li>
-                          <li><a href="#">Layanan Non-Akademik</a></li>
-                          <li><a href="#">Daftar SAPA</a></li>
-                          <li><a href="#">Masuk SAPA</a></li>
-                          <li><a href="#">Kontak</a></li>
+                          <li><a href="{{ url('/') }}">Beranda</a></li>
+                          <li><a href="{{ url('/') }}">Layanan Akademik</a></li>
+                          <li><a href="{{ url('/') }}">Layanan Non-Akademik</a></li>
+                          <li><a href="{{ url('/daftar') }}">Daftar SAPA</a></li>
+                          <li><a href="{{ url('/masuk') }}">Masuk SAPA</a></li>
+                          <li><a href="{{ url('/kontak') }}">Kontak</a></li>
                       </ul>
                   </div>
               </div>
@@ -47,9 +45,9 @@
                   <div class="footer__widget mb-30 pl-150 pl-lg-0 pl-md-0 pl-xs-0">
                       <h6 class="widget-title mb-35">Tautan</h6>
                       <ul class="fot-list mb-30">
-                          <li><a href="index">SIMAMA</a> </li>
+                          <li><a href="#">SIMAMA</a> </li>
                           <li><a href="#">PMDP</a></li>
-                          <li><a href="blog">Kebijakan Privasi</a></li>
+                          <li><a href="#">Kebijakan Privasi</a></li>
                       </ul>
                   </div>
               </div>

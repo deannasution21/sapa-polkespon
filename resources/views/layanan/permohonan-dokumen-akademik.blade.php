@@ -97,20 +97,20 @@
                     'id' => 1,
                     'title' => 'Legalisir Ijazah/Transkrip Nilai',
                     'jenis' => 'akademik',
-                    'icon' => null,
+                    'icon' => url('/assets/img/icon/1704689402659b7efaa4bdf1.56164178.webp'),
                     'url' => 'legalisir',
                 ],
                 [
                     'id' => 2,
                     'title' => 'Pengajuan Surat Keterangan',
                     'jenis' => 'akademik',
-                    'icon' => null,
+                    'icon' => url('/assets/img/icon/1704689354659b7ecac52d49.87203241.webp'),
                     'url' => 'surat-keterangan',
                 ],
             ];
         @endphp
         <!-- blog-details-area start -->
-        <section class="what-looking-for pos-rel gradient-bg pt-135 pb-115 pt-md-90 pb-md-70 pt-xs-90 pb-xs-70">
+        <section class="what-looking-for border-bot pos-rel pt-135 pb-115 pt-md-90 pb-md-70 pt-xs-90 pb-xs-70">
             <div class="what-blur-bg-three"></div>
             <div class="container">
                 <div class="row justify-content-center online__course__cat mt-30">
@@ -120,15 +120,20 @@
                             $delay = number_format(0.1 * ($key + 1), 1);
                         @endphp
                         <div class="col-xl-3 col-lg-4 col-md-6 grid-item cat-{{ $val['jenis'] }}">
-                            <div class="courses_link mb-30 wow fadeInUp2 animated" data-wow-delay="{{ $delay }}s"
-                                style="min-height: 280px">
-                                <img class="icon-01 mb-35"
-                                    src="{{ asset($val['icon'] ?? asset('/') . 'assets/img/icon/chart-a.svg') }}"
-                                    alt="">
-                                <h4 class="sub-title mb-25 fs-6">{{ $val['title'] }}</h4>
-                                <a href="{{ $val['url'] }}"><img class='arrows-icon'
-                                        src="{{ asset('/') }}assets/img/icon/arrow-right.svg" alt="arrow-right"></a>
-                            </div>
+                            <a
+                                @if ($val['url'] != '#') href="{{ $val['url'] }}" @else onclick="layananMaintenance()" style="cursor:pointer" @endif>
+                                <div class="courses_link mb-30 wow fadeInUp2 animated" data-wow-delay="{{ $delay }}s"
+                                    style="min-height: 280px">
+                                    <img class="icon-01 mb-35"
+                                        src="{{ asset($val['icon'] ?? url('/') . '/assets/img/icon/chart-a.svg') }}"
+                                        alt="">
+                                    <h4 class="sub-title mb-25 fs-6">{{ $val['title'] }}</h4>
+                                    <div>
+                                        <img class='arrows-icon' src="{{ url('/') }}/assets/img/icon/arrow-right.svg"
+                                            alt="arrow-right">
+                                    </div>
+                                </div>
+                            </a>
                         </div>
                     @endforeach
                 </div>

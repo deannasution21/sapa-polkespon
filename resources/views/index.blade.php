@@ -65,85 +65,85 @@
                     'id' => 1,
                     'title' => 'Permohonan Dokumen Akademik',
                     'jenis' => 'akademik',
-                    'icon' => null,
-                    'url' => '#',
+                    'icon' => url('/assets/img/icon/1704689402659b7efaa4bdf1.56164178.webp'),
+                    'url' => url('/layanan/permohonan-dokumen-akademik'),
                 ],
                 [
                     'id' => 2,
                     'title' => 'Ethical Clearance',
                     'jenis' => 'akademik',
-                    'icon' => null,
+                    'icon' => url('/assets/img/icon/1704689388659b7eec521bd3.58958353.webp'),
                     'url' => '#',
                 ],
                 [
                     'id' => 3,
                     'title' => 'Translate Abstract/Dokumen',
                     'jenis' => 'akademik',
-                    'icon' => null,
-                    'url' => '#',
+                    'icon' => url('/assets/img/icon/1704689354659b7ecac52d49.87203241.webp'),
+                    'url' => url('/layanan/translate'),
                 ],
                 [
                     'id' => 4,
                     'title' => 'Layanan TOEFL ITP',
                     'jenis' => 'akademik',
-                    'icon' => null,
-                    'url' => '#',
+                    'icon' => url('/assets/img/icon/1704689343659b7ebfc15a16.08376763.webp'),
+                    'url' => url('/layanan/toefl-itp'),
                 ],
                 [
                     'id' => 5,
                     'title' => 'Layanan Pengujian',
                     'jenis' => 'akademik',
-                    'icon' => null,
-                    'url' => '#',
+                    'icon' => url('/assets/img/icon/1704689371659b7edbce5217.88489736.webp'),
+                    'url' => url('/layanan/pengujian'),
                 ],
                 [
                     'id' => 6,
                     'title' => 'Layanan Jurnal dan Publikasi',
                     'jenis' => 'akademik',
-                    'icon' => null,
-                    'url' => '#',
+                    'icon' => url('/assets/img/icon/1704689449659b7f29847e22.88050897.webp'),
+                    'url' => 'https://kemkes.go.id/id/home',
                 ],
                 [
                     'id' => 7,
                     'title' => 'Layanan Perpustakaan',
                     'jenis' => 'akademik',
-                    'icon' => null,
-                    'url' => '#',
+                    'icon' => url('/assets/img/icon/1704689402659b7efaa4bdf1.56164178.webp'),
+                    'url' => url('/layanan/perpustakaan'),
                 ],
                 [
                     'id' => 8,
                     'title' => 'Layanan Pengembangan Kompetensi',
                     'jenis' => 'akademik',
-                    'icon' => null,
+                    'icon' => url('/assets/img/icon/1704689388659b7eec521bd3.58958353.webp'),
                     'url' => '#',
                 ],
                 [
                     'id' => 9,
                     'title' => 'Layanan Penyewaan Sarpras',
                     'jenis' => 'non_akademik',
-                    'icon' => null,
-                    'url' => '#',
+                    'icon' => url('/assets/img/icon/1704689354659b7ecac52d49.87203241.webp'),
+                    'url' => url('/layanan/sarpras'),
                 ],
                 [
                     'id' => 10,
                     'title' => 'Layanan Klinik Pratama',
                     'jenis' => 'non_akademik',
-                    'icon' => null,
-                    'url' => '#',
+                    'icon' => url('/assets/img/icon/1704689343659b7ebfc15a16.08376763.webp'),
+                    'url' => url('/layanan/klinik'),
                 ],
                 [
                     'id' => 11,
                     'title' => 'Layanan Asrama (khusus mahasiswa)',
                     'jenis' => 'non_akademik',
-                    'icon' => null,
-                    'url' => '#',
+                    'icon' => url('/assets/img/icon/1704689371659b7edbce5217.88489736.webp'),
+                    'url' => url('/layanan/asrama'),
                 ],
                 [
                     'id' => 12,
                     'title' => 'Layanan Catering (khusus mahasiswa)',
                     'jenis' => 'non_akademik',
-                    'icon' => null,
-                    'url' => '#',
+                    'icon' => url('/assets/img/icon/1704689449659b7f29847e22.88050897.webp'),
+                    'url' => url('/layanan/catering'),
                 ],
             ];
         @endphp
@@ -175,28 +175,18 @@
                         <div class="col-xl-6 text-center text-xl-end">
                             <ul class="search__area d-md-inline-flex align-items-center justify-content-between mb-30 wow fadeInUp animated"
                                 data-delay="1.5s">
-                                <li>
+                                <li class="col">
                                     <div class="widget__search">
                                         <form class="input-form" action="#">
-                                            <input type="text" placeholder="Find Courses">
+                                            <input type="text" placeholder="Temukan layanan disini..."
+                                                style="height: 54px">
                                         </form>
                                         <button class="search-icon"><i class="far fa-search"></i></button>
                                     </div>
                                 </li>
-                                <li>
-                                    <div class="widget__select">
-                                        <select name="select-cat" id="select">
-                                            <option value="">Categories</option>
-                                            <option value="">Class One</option>
-                                            <option value="">Class Two</option>
-                                            <option value="">Class Three</option>
-                                            <option value="">Class Four</option>
-                                            <option value="">Class Five</option>
-                                        </select>
-                                    </div>
-                                </li>
-                                <li>
-                                    <button class="theme_btn search_btn ml-35">Search Now</button>
+                                <li class="col">
+                                    <button class="theme_btn search_btn ml-35" style="padding: 19px 39px;">Cari
+                                        Layanan</button>
                                 </li>
                             </ul>
                         </div>
@@ -208,14 +198,21 @@
                                 $delay = number_format(0.1 * ($key + 1), 1);
                             @endphp
                             <div class="col-xl-3 col-lg-4 col-md-6 grid-item cat-{{ $val['jenis'] }}">
-                                <div class="courses_link mb-30 wow fadeInUp2 animated"
-                                    data-wow-delay="{{ $delay }}s" style="min-height: 280px">
-                                    <img class="icon-01 mb-35"
-                                        src="{{ asset($val['icon'] ?? 'assets/img/icon/chart-a.svg') }}" alt="">
-                                    <h4 class="sub-title mb-25 fs-6">{{ $val['title'] }}</h4>
-                                    <a href="{{ $val['url'] }}"><img class='arrows-icon'
-                                            src="assets/img/icon/arrow-right.svg" alt="arrow-right"></a>
-                                </div>
+                                <a
+                                    @if ($val['url'] != '#') href="{{ $val['url'] }}" @else onclick="layananMaintenance()" style="cursor:pointer" @endif>
+                                    <div class="courses_link mb-30 wow fadeInUp2 animated"
+                                        data-wow-delay="{{ $delay }}s" style="min-height: 280px">
+                                        <img class="icon-01 mb-35"
+                                            src="{{ asset($val['icon'] ?? url('/') . '/assets/img/icon/chart-a.svg') }}"
+                                            alt="">
+                                        <h4 class="sub-title mb-25 fs-6">{{ $val['title'] }}</h4>
+                                        <div>
+                                            <img class='arrows-icon'
+                                                src="{{ url('/') }}/assets/img/icon/arrow-right.svg"
+                                                alt="arrow-right">
+                                        </div>
+                                    </div>
+                                </a>
                             </div>
                         @endforeach
                     </div>

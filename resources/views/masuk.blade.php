@@ -105,7 +105,7 @@
                                 </div>
                                 <div class="col-lg-12 mb-30">
                                     <p class="mb-3 text-start">Email</p>
-                                    <input type="email" placeholder="Username">
+                                    <input type="email" placeholder="Username" value="fuadamin@gmail.com">
                                 </div>
                                 <div class="col-lg-12 mb-30">
                                     <p class="mb-3 text-start">Kata Sandi</p>
@@ -137,7 +137,7 @@
                                 </div>
                             </form>
                             <div class="mx-auto" style="max-width: 350px;">
-                                <button class="theme_btn message_btn mt-20">Masuk</button>
+                                <button onclick="masuk()" class="btn-submit theme_btn message_btn mt-20">Masuk</button>
                                 <p class="my-3">Atau</p>
                                 <button type="button"
                                     class="btn btn-outline-primary w-100 d-flex align-items-center justify-content-center gap-2 mb-4">
@@ -147,7 +147,8 @@
                                 </button>
                             </div>
 
-                            <p>Belum punya akun? <a href="daftar" class="fw-bold text-primary">Daftar sekarang</a></p>
+                            <p>Belum punya akun? <a href="{{ url('/daftar') }}" class="fw-bold text-primary">Daftar
+                                    sekarang</a></p>
                         </div>
                     </div>
                 </div>
@@ -213,6 +214,21 @@
                 alert("Captcha salah. Silakan coba lagi.");
                 generateCaptcha();
             }
+        }
+    </script>
+
+    <script>
+        function masuk() {
+            const btn1 = document.querySelector('.btn-submit')
+            btn1.disabled = true
+            btn1.textContent = 'Memproses...'
+
+            Toast.fire({
+                icon: "success",
+                title: "Selamat datang di SAPA POLKESPON"
+            }).then(() => {
+                window.location.href = "/dashboard"
+            })
         }
     </script>
 @endsection

@@ -103,13 +103,17 @@
                                         </label>
                                     </div>
                                 </div>
+                                <div class="col-lg-12 mb-30">
+                                    <p class="mb-3 text-start">Nama Lengkap</p>
+                                    <input type="text" placeholder="Nama Lengkap" value="Fuad Amin">
+                                </div>
                                 <div class="col-lg-12 mb-30" id="nim">
                                     <p class="mb-3 text-start">NIM</p>
-                                    <input type="text" placeholder="Nomor Induk Mahasiswa">
+                                    <input type="text" placeholder="Nomor Induk Mahasiswa" value="2024123974">
                                 </div>
                                 <div class="col-lg-12 mb-30">
                                     <p class="mb-3 text-start">Email</p>
-                                    <input type="email" placeholder="Username">
+                                    <input type="email" placeholder="Username" value="fuadamin@gmail.com">
                                 </div>
                                 <div class="col-lg-12 mb-30">
                                     <p class="mb-3 text-start">Kata Sandi</p>
@@ -156,7 +160,7 @@
                                     <input type="text" id="captchaInput" placeholder="Masukkan captcha" class="mt-2">
                                 </div>
                             </form>
-                            <button class="theme_btn message_btn mt-20 mb-4">Masuk</button>
+                            <button onclick="daftar()" class="btn-submit theme_btn message_btn mt-20 mb-4">Daftar</button>
                             <p>Sudah punya akun? <a href="masuk" class="fw-bold text-primary">Masuk sekarang</a></p>
                         </div>
                     </div>
@@ -261,6 +265,54 @@
                 alert("Captcha salah. Silakan coba lagi.");
                 generateCaptcha();
             }
+        }
+    </script>
+
+    <script>
+        function daftar() {
+            const btn1 = document.querySelector('.btn-submit')
+            btn1.disabled = true
+            btn1.textContent = 'Memproses...'
+            Swal.fire({
+                customClass: {
+                    title: 'fs-3', // Larger title
+                    htmlContainer: 'fs-6', // For the text/body
+                },
+                title: 'Konfirmasi Pendaftaran',
+                html: `<p>Anda sudah yakin dengan data pendaftaran ini?</p>`,
+                icon: 'question',
+                allowOutsideClick: false,
+                allowEscapeKey: false,
+                showCancelButton: true,
+                confirmButtonText: "Daftar",
+                cancelButtonText: "Batal"
+            }).then((lanjutkan) => {
+                if (lanjutkan.isConfirmed) {
+                    Swal.fire({
+                        customClass: {
+                            title: 'fs-3', // Larger title
+                            htmlContainer: 'fs-6', // For the text/body
+                        },
+                        title: 'Memproses...',
+                        text: 'Mohon menunggu sebentar',
+                        allowOutsideClick: false,
+                        allowEscapeKey: false,
+                        didOpen: async () => {
+                            Swal.showLoading(); // Show a loading indicator
+
+                            Toast.fire({
+                                icon: "success",
+                                title: "Pendaftaran berhasil. Anda akan dialihkan ke halaman masuk"
+                            }).then(() => {
+                                window.location.href = "/masuk"
+                            })
+                        }
+                    })
+                } else {
+                    btn1.disabled = false
+                    btn1.textContent = 'Daftar'
+                }
+            })
         }
     </script>
 @endsection
