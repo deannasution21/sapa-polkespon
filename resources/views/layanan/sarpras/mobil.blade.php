@@ -160,7 +160,7 @@
         <section class="blog-details-area pt-150 pb-105 pt-md-100 pb-md-55 pt-xs-100 pb-xs-55" style="background: #fbfcfd">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-5 col-xl-4">
+                    <div class="col-lg-5 col-xl-4 order-2 order-lg-1">
                         <div class="courses-ingredients ms-0 mb-50" style="border: 2px dashed #16b3ac">
                             <h4 class="corses-title mb-30">Informasi & Petunjuk</h4>
                             <p class="mb-30">Layanan ini diperuntukkan bagi mahasiswa Poltekkes Pontianak yang memiliki
@@ -255,7 +255,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-7 col-xl-8">
+                    <div class="col-lg-7 col-xl-8 order-1 order-lg-2">
                         <div class="comments-form-area mb-45 border-bot border-start-0 border-end-0 border-top-0 px-0 pt-0">
                             <div class="blog-details-box mb-45">
                                 <ul class="blogs__meta mb-30 gap-3 border-bot pb-3">

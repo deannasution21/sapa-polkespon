@@ -53,6 +53,11 @@
         color: #16b3ac;
     }
 
+    .side-mobile-menu ul li a[aria-expanded="true"],
+    .side-mobile-menu ul li a:hover {
+        color: #CDDC2C
+    }
+
     .swal2-confirm {
         background: #16b3ac
     }

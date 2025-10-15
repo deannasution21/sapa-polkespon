@@ -115,7 +115,7 @@
         request()->is('layanan/klinik/gigi') ||
         request()->is('layanan/klinik/gizi') ||
         request()->is('layanan/asrama') ||
-        request()->is('layanan/catering')
+        request()->is('layanan/katering')
             ? 'active'
             : '' }}">
 

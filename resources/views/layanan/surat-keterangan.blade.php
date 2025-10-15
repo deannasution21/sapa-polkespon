@@ -131,7 +131,7 @@
             style="background: #fbfcfd">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-5 col-xl-4">
+                    <div class="col-lg-5 col-xl-4 order-2 order-lg-1">
                         <div class="courses-ingredients ms-0 mb-50" style="border: 2px dashed #16b3ac">
                             <h4 class="corses-title mb-30">Informasi & Petunjuk</h4>
                             <p class="mb-30">Layanan ini disediakan bagi mahasiswa maupun alumni Poltekkes Pontianak yang
@@ -229,7 +229,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-7 col-xl-8">
+                    <div class="col-lg-7 col-xl-8 order-1 order-lg-2">
                         <div class="comments-form-area mb-45 bg-white rounded-3 border-0 shadow-sm">
                             <h2>Form Surat Keterangan</h2>
                             <form id="formSubmit" class="comments-form mb-30">

@@ -1,5 +1,5 @@
  <!-- slide-bar start -->
- <aside class="slide-bar">
+ <aside class="slide-bar" style="background: #09B8AC">
      <div class="close-mobile-menu">
          <a href="javascript:void(0);"><i class="fas fa-times"></i></a>
      </div>
@@ -36,30 +36,33 @@
      <!-- side-mobile-menu start -->
      <nav class="side-mobile-menu">
          <ul id="mobile-menu-active">
-             <li><a href="index">Beranda</a></li>
+             <li><a href="{{ url('/') }}">Beranda</a></li>
              <li class="has-dropdown">
                  <a href="#">Akademik</a>
                  <ul class="sub-menu">
-                     <li><a href="courses">Permohonan Dokumen Akademik</a></li>
-                     <li><a href="courses-2">Ethical Clearance</a></li>
-                     <li><a href="course-details">Translate Abstract/Dokumen</a></li>
-                     <li><a href="price">Layanan TOEFL ITP</a></li>
-                     <li><a href="instructor">Layanan Pengujian Laboratorium</a></li>
-                     <li><a href="instructor-profile">Layanan Jurnal dan Publikasi</a></li>
-                     <li><a href="faq">Layanan Perpustakan</a></li>
-                     <li><a href="login">Layanan Pengembangan Kompetensi SDM Kesehatan</a></li>
+                     <li><a href="{{ url('/layanan/permohonan-dokumen-akademik') }}">Permohonan Dokumen Akademik</a>
+                     </li>
+                     <li><a onclick="layananMaintenance()" style="cursor:pointer">Ethical Clearance</a></li>
+                     <li><a href="{{ url('/layanan/translate') }}">Translate Abstract/Dokumen</a></li>
+                     <li><a href="{{ url('/layanan/toefl-itp') }}">Layanan TOEFL ITP</a></li>
+                     <li><a onclick="layananMaintenance()" style="cursor:pointer">Layanan Pengujian Laboratorium</a>
+                     </li>
+                     <li><a href="https://kemkes.go.id/id/home" target="_blank">Layanan Jurnal dan Publikasi</a></li>
+                     <li><a href="{{ url('/layanan/perpustakaan') }}">Layanan Perpustakan</a></li>
+                     <li><a onclick="layananMaintenance()" style="cursor:pointer">Layanan Pengembangan Kompetensi SDM
+                             Kesehatan</a></li>
                  </ul>
              </li>
              <li class="has-dropdown">
                  <a href="#">Non Akademik</a>
                  <ul class="sub-menu">
-                     <li><a href="courses">Layanan Penyewaan Sarpras</a></li>
-                     <li><a href="courses-2">Layanan Klinik Pratama</a></li>
-                     <li><a href="course-details">Layanan Asrama (khusus mahasiswa)</a></li>
-                     <li><a href="price">Layanan Catering (khusus mahasiswa)</a></li>
+                     <li><a href="{{ url('/layanan/sarpras') }}">Layanan Penyewaan Sarpras</a></li>
+                     <li><a href="{{ url('/layanan/klinik') }}">Layanan Klinik Pratama</a></li>
+                     <li><a href="{{ url('/layanan/asrama') }}">Layanan Asrama (khusus mahasiswa)</a></li>
+                     <li><a href="{{ url('/layanan/katering') }}">Layanan Catering (khusus mahasiswa)</a></li>
                  </ul>
              </li>
-             <li><a href="contact">Kontak</a></li>
+             <li><a href="{{ url('/kontak') }}">Kontak</a></li>
          </ul>
      </nav>
      <!-- side-mobile-menu end -->
