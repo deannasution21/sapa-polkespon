@@ -128,7 +128,8 @@
         </section>
         <!--page-title-area end-->
         <!-- blog-details-area start -->
-        <section class="blog-details-area border-bot pt-150 pb-105 pt-md-100 pb-md-55 pt-xs-100 pb-xs-55">
+        <section class="blog-details-area border-bot pt-150 pb-105 pt-md-100 pb-md-55 pt-xs-100 pb-xs-55"
+            style="background: #fbfcfd">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-5 col-xl-4">
@@ -227,7 +228,7 @@
                         </div>
                     </div>
                     <div class="col-lg-7 col-xl-8">
-                        <div class="comments-form-area mb-45">
+                        <div class="comments-form-area mb-45 bg-white rounded-3 border-0 shadow-sm">
                             <h2>Form Pendaftaran Klinik</h2>
                             <form id="formSubmit" class="comments-form mb-30">
                                 <div class="row mb-3 align-items-center">
@@ -310,8 +311,8 @@
                             </form>
 
                         </div>
-                        <div class="comments-form-area mb-45">
-                            <h2>History Pendaftaran</h2>
+                        <div class="comments-form-area mb-45 bg-white rounded-3 border-0 shadow-sm">
+                            <h2>Riwayat Pendaftaran</h2>
                             <div class="alert alert-info small mb-4">
                                 ℹ️ — Anda memiliki satu pembayaran yang sedang menunggu
                             </div>

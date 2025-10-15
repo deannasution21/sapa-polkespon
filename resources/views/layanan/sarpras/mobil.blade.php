@@ -256,7 +256,7 @@
                         </div>
                     </div>
                     <div class="col-lg-7 col-xl-8">
-                        <div class="comments-form-area mb-45 border-0 p-0">
+                        <div class="comments-form-area mb-45 border-bot border-start-0 border-end-0 border-top-0 px-0 pt-0">
                             <div class="blog-details-box mb-45">
                                 <ul class="blogs__meta mb-30 gap-3 border-bot pb-3">
                                     <li><span class="blog-author">Tanggal</span></li>
@@ -272,7 +272,7 @@
                                     @endphp
                                     <div class="col-xl-4 col-lg-6 col-md-6 grid-item cat-{{ $val['jenis'] }}">
                                         <div>
-                                            <div class="z-gallery mb-30">
+                                            <div class="z-gallery mb-30 shadow-sm">
                                                 <div class="z-gallery__thumb mb-20" style="height: 150px;">
                                                     <div class="feedback-tag @if (!$val['available']) bg-danger @endif"
                                                         style="font-size: 12px; z-index: 1;">
@@ -282,8 +282,8 @@
                                                             Tersedia
                                                         @endif
                                                     </div>
-                                                    <img class="h-100 w-100 object-cover"
-                                                        @if (!$val['available']) style="filter: grayscale(1)" @endif
+                                                    <img class="h-100 w-100"
+                                                        @if (!$val['available']) style="filter: grayscale(1); object-fit: cover" @else style="object-fit: cover" @endif
                                                         src="{{ $val['icon'] }}" alt="">
                                                 </div>
                                                 <div class="z-gallery__content pb-3">
@@ -305,79 +305,8 @@
                                 @endforeach
                             </div>
                         </div>
-                        <div class="comments-form-area mb-45">
-                            <h2>Form Perpustakaan</h2>
-                            <form id="formSubmit" class="comments-form mb-30">
-                                <div class="row mb-3 align-items-center">
-                                    <label for="nama" class="col-sm-3 col-form-label fw-semibold">Nama Lengkap</label>
-                                    <div class="col-sm-9">
-                                        <input type="text" id="nama" placeholder="Nama Anda" disabled>
-                                    </div>
-                                </div>
-
-                                <div class="row mb-3 align-items-center">
-                                    <label for="nim" class="col-sm-3 col-form-label fw-semibold">NIM</label>
-                                    <div class="col-sm-9">
-                                        <input type="text" id="nim" placeholder="Nomor Induk Mahasiswa"
-                                            disabled>
-                                    </div>
-                                </div>
-
-                                <div class="row mb-3 align-items-center">
-                                    <label for="hp" class="col-sm-3 col-form-label fw-semibold">No HP/WA</label>
-                                    <div class="col-sm-9">
-                                        <input type="text" id="hp" placeholder="Nomor HP/WA" disabled>
-                                    </div>
-                                </div>
-
-                                <div class="row mb-3 align-items-start">
-                                    <label for="judul" class="col-sm-3 col-form-label fw-semibold">Judul Buku</label>
-                                    <div class="col-sm-9">
-                                        <textarea name="judul" id="judul" rows="3">Judul buku</textarea>
-                                        <p class="text-primary small">**Jika lebih dari 1 judul buku, pisahkan dengan tanda
-                                            koma (,)</p>
-                                    </div>
-                                </div>
-
-                                <div class="row mb-3 align-items-center">
-                                    <label for="denda" class="col-sm-3 col-form-label fw-semibold">Denda
-                                        Keterlambatan (Rp)</label>
-                                    <div class="col-sm-9">
-                                        <input type="text" id="denda" placeholder="0">
-                                    </div>
-                                </div>
-
-                                <div class="row mb-30 align-items-start">
-                                    <label for="pembayaran" class="col-sm-3 col-form-label fw-semibold">Metode
-                                        Pembayaran</label>
-                                    <div class="col-sm-9">
-                                        <div class="d-flex gap-2">
-                                            <select class="form-control pembayaranSelect me-0" id="pembayaranSelect"
-                                                name="pembayaran" placeholder="Plih Pembayaran" required>
-                                            </select>
-                                            <div class="text-end">
-                                                <button type="button" class="btn btn-sm btn-primary"
-                                                    onclick="copyToClipboard()">
-                                                    <i class="fas fa-copy"></i>
-                                                </button>
-                                            </div>
-                                        </div>
-                                        <input type="text" class="mt-3" placeholder="AN. POLTEKKES PONTIANAK"
-                                            disabled>
-                                    </div>
-                                </div>
-
-                                <div class="text-end">
-                                    <button class="theme_btn comment_btn btn-submit">Ajukan Permohonan</button>
-                                </div>
-                            </form>
-
-                        </div>
-                        <div class="comments-form-area mb-45">
-                            <h2>History Perpustakaan</h2>
-                            <div class="alert alert-info small mb-4">
-                                ℹ️ — Anda memiliki satu pembayaran yang sedang menunggu
-                            </div>
+                        <div class="comments-form-area mb-45 bg-white rounded-3 border-0 shadow-sm">
+                            <h2>Riwayat Penyewaan</h2>
                             <div class="parent-table w-100 overflow-auto">
                                 <table id="tableHistory" class="fs-6" style="min-width: 700px;">
                                     <thead>
@@ -389,10 +318,10 @@
                                                 Tanggal
                                             </th>
                                             <th style="min-width: 200px;">
-                                                Judul Buku
+                                                Jenis Mobil
                                             </th>
                                             <th class="text-end" style="min-width: 100px;">
-                                                Denda Keterlambatan
+                                                Biaya Sewa
                                             </th>
                                             <th class="text-end" style="min-width: 100px;">
                                                 Aksi
@@ -415,19 +344,18 @@
                                             </td>
                                             <td>
                                                 <ul class="list-disc">
-                                                    <li class="mb-0">Pengantar Kesehatan Lingkungan</li>
-                                                    <li class="mb-0">Menjadi Pribadi yang Handal</li>
-                                                    <li class="mb-0">Serba Serbi Sehat Praktis</li>
+                                                    <li class="mb-0">Hiace 16 Seat</li>
+                                                    <li class="mb-0">Avanza MT 2020 #1</li>
                                                 </ul>
                                             </td>
                                             <td class="text-end">
-                                                Rp 55.421,-
+                                                Rp 1.155.421,-
                                             </td>
                                             <td>
                                                 <div class="btn-group-vertical" role="group">
                                                     <button type="button" class="btn btn-sm btn-success"
                                                         data-bs-toggle="modal" data-bs-target="#modalInvoice">
-                                                        <i class="fas fa-credit-card-front me-2"></i> Bayar Denda
+                                                        <i class="fas fa-credit-card-front me-2"></i> Pembayaran
                                                     </button>
                                                     <button type="button" class="btn btn-sm btn-danger">
                                                         <i class="fas fa-times me-2"></i> Batalkan
@@ -439,7 +367,7 @@
                                                     style="text-transform: unset">-</a>
                                             </td>
                                             <td class="text-end">
-                                                <div class="badge bg-warning rounded-pill p-2">Menunggu Pembayaran</div>
+                                                <div class="badge bg-warning rounded-pill p-2">Selesai</div>
                                             </td>
                                         </tr>
                                     </tbody>
@@ -506,12 +434,6 @@
                         </div>
 
                         <div class="mb-3">
-                            <h6 class="mb-1">Alamat Penjemputan:</h6>
-                            <textarea class="form-control" id="alamat" name="alamat" rows="2"
-                                placeholder="Masukkan alamat lengkap penjemputan..." required></textarea>
-                        </div>
-
-                        <div class="mb-3">
                             <h6 class="mb-1">Tujuan Perjalanan:</h6>
                             <textarea class="form-control" id="tujuan" name="tujuan" rows="2"
                                 placeholder="Masukkan tujuan perjalanan..." required></textarea>
@@ -519,7 +441,7 @@
 
                         <div class="mb-3">
                             <h6 class="mb-1">Estimasi Biaya:</h6>
-                            <h4 class="fw-bold text-success mb-0" id="totalHarga">Rp 0</h4>
+                            <h4 class="fw-bold text-success mb-0" id="totalHarga">Rp 500.000/Hari</h4>
                             <p class="text-muted small">*Biaya akan disesuaikan berdasarkan jarak dan durasi penyewaan</p>
                         </div>
                     </form>

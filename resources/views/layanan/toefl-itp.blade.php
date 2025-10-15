@@ -129,7 +129,8 @@
             ];
         @endphp
         <!-- blog-details-area start -->
-        <section class="course-categories border-bot pt-150 pb-115 pt-md-95 pb-md-65 pt-xs-95 pb-xs-65">
+        <section class="course-categories border-bot pt-150 pb-115 pt-md-95 pb-md-65 pt-xs-95 pb-xs-65"
+            style="background: #fbfcfd">
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-xl-12 text-center">

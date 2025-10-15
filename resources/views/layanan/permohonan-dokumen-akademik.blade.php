@@ -110,7 +110,8 @@
             ];
         @endphp
         <!-- blog-details-area start -->
-        <section class="what-looking-for border-bot pos-rel pt-135 pb-115 pt-md-90 pb-md-70 pt-xs-90 pb-xs-70">
+        <section class="what-looking-for border-bot pos-rel pt-135 pb-115 pt-md-90 pb-md-70 pt-xs-90 pb-xs-70"
+            style="background: #fbfcfd">
             <div class="what-blur-bg-three"></div>
             <div class="container">
                 <div class="row justify-content-center online__course__cat mt-30">

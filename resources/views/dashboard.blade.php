@@ -72,7 +72,8 @@
         </section>
         <!--page-title-area end-->
         <!-- blog-details-area start -->
-        <section class="blog-details-area border-bot pt-150 pb-105 pt-md-100 pb-md-55 pt-xs-100 pb-xs-55">
+        <section class="blog-details-area border-bot pt-150 pb-105 pt-md-100 pb-md-55 pt-xs-100 pb-xs-55"
+            style="background: #fbfcfd">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-4">

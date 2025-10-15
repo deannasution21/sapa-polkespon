@@ -61,7 +61,8 @@
             ];
         @endphp
         <!-- blog-details-area start -->
-        <section class="what-looking-for border-bot pos-rel pt-135 pb-115 pt-md-90 pb-md-70 pt-xs-90 pb-xs-70">
+        <section class="what-looking-for border-bot pos-rel pt-135 pb-115 pt-md-90 pb-md-70 pt-xs-90 pb-xs-70"
+            style="background: #fbfcfd">
             <div class="what-blur-bg-three"></div>
             <div class="container">
                 <div class="row justify-content-center online__course__cat mt-30">
@@ -75,7 +76,7 @@
                                 @if ($val['url'] != '#') href="{{ $val['url'] }}" @else onclick="layananMaintenance()" style="cursor:pointer" @endif>
                                 <div class="z-gallery mb-30">
                                     <div class="z-gallery__thumb mb-20"><img class="img-fluid" src="{{ $val['icon'] }}"
-                                            alt="" style="height: 188px">
+                                            alt="" style="height: 188px; object-fit: cover;">
                                     </div>
                                     <div class="z-gallery__content text-center">
                                         <h4 class="sub-title mb-25 fs-6">{{ $val['title'] }}</h4>

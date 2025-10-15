@@ -25,6 +25,7 @@
         request()->is('layanan/surat-keterangan') ||
         request()->is('layanan/translate') ||
         request()->is('layanan/toefl-itp') ||
+        request()->is('layanan/toefl-itp/daftar') ||
         request()->is('layanan/perpustakaan') ||
         request()->is('layanan/ethical-clearance') ||
         request()->is('layanan/pengujian') ||
@@ -102,6 +103,12 @@
                                     <li
                                         class="nav-item dropdown mega-menu
         {{ request()->is('layanan/sarpras') ||
+        request()->is('layanan/sarpras/mobil') ||
+        request()->is('layanan/sarpras/ruang-auditorium') ||
+        request()->is('layanan/sarpras/ruang-teather') ||
+        request()->is('layanan/sarpras/ruang-kelas') ||
+        request()->is('layanan/sarpras/alat-laboratorium') ||
+        request()->is('layanan/sarpras/cbt') ||
         request()->is('layanan/klinik') ||
         request()->is('layanan/klinik/umum') ||
         request()->is('layanan/klinik/kia-kb') ||
@@ -163,15 +170,24 @@
                     <div class="right-nav d-flex align-items-center justify-content-end">
                         <div class="right-btn mr-25 mr-xs-15">
                             <ul class="d-flex align-items-center">
-                                <li><a href="{{ url('/daftar') }}" class="theme_btn free_btn">Daftar SAPA</a></li>
-                                <li><a class="sign-in ml-20" href="{{ url('/masuk') }}"><img
+                                <li><a title="Daftar" href="{{ url('/daftar') }}" class="theme_btn free_btn">Daftar
+                                        SAPA</a></li>
+                                <li><a title="Masuk" class="sign-in ml-20" href="{{ url('/masuk') }}"><img
                                             src="{{ URL::asset('assets/img/icon/user.svg') }}" alt=""></a>
+                                </li>
+                                <li class="position-relative" id="cartBtn" hidden><a title="Keranjang"
+                                        class="sign-in ml-20 d-flex justify-content-center align-items-center"
+                                        href="{{ url('/keranjang') }}">
+                                        <i class="fas fa-shopping-cart text-primary fs-5"></i>
+                                        <sup class="badge position-absolute"
+                                            style="right: -10px; background: #09B8AC">3</sup>
+                                    </a>
                                 </li>
                             </ul>
                         </div>
-                        <div class="hamburger-menu d-md-inline-block d-lg-none text-right">
+                        <div class="hamburger-menu d-md-inline-block d-lg-none text-right ms-3">
                             <a href="javascript:void(0);">
-                                <i class="far fa-bars"></i>
+                                <i class="far fa-bars" style="color: #4CC187"></i>
                             </a>
                         </div>
                     </div>

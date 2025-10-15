@@ -53,6 +53,14 @@
         color: #16b3ac;
     }
 
+    .swal2-confirm {
+        background: #16b3ac
+    }
+
+    .swal2-confirm:hover {
+        background: #36bfb4
+    }
+
     .whatsapp-float {
         position: fixed;
         bottom: 75px;
@@ -196,6 +204,18 @@
                 // cancelButtonText: "Batal"
             })
         }
+    </script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const currentPath = window.location.pathname; // e.g. /layanan/translate or /layanan/toefl-itp
+            const element = document.getElementById("cartBtn");
+
+            // If URL starts with /layanan/
+            if (currentPath.startsWith("/layanan/sarpras/")) {
+                element.hidden = false;
+            }
+        });
     </script>
 
     @yield('js')
