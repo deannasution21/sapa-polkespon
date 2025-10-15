@@ -143,7 +143,7 @@
                     'title' => 'Layanan Catering (khusus mahasiswa)',
                     'jenis' => 'non_akademik',
                     'icon' => url('/assets/img/icon/1704689449659b7f29847e22.88050897.webp'),
-                    'url' => url('/layanan/catering'),
+                    'url' => url('/layanan/katering'),
                 ],
             ];
         @endphp

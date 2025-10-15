@@ -148,7 +148,7 @@
                                                 </a>
                                             </li>
                                             <li>
-                                                <a href="{{ url('/layanan/catering') }}">
+                                                <a href="{{ url('/layanan/katering') }}">
                                                     <span><img src="{{ URL::asset('assets/img/icon/icon10.svg') }}"
                                                             alt=""></span>
                                                     Layanan Catering (khusus mahasiswa)
